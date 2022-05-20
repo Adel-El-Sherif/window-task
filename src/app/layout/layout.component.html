@@ -1,23 +1,16 @@
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p>Lorem, ipsum dolor. Lorem, ipsum dolor.</p>
-
+<mat-drawer-container class="example-container" autosize  >
+    
+    <mat-drawer #drawer class="example-sidenav bg-dark" mode="side" (openedChange)="openedChange($event)">
+        <sidebar [draweState]="draweState"></sidebar>
     </mat-drawer>
   
     <div class="example-sidenav-content">
 
         <!-- begin:: header  -->
-        <app-header></app-header>
+        <app-header (toggleDrawer)="drawer.toggle()"></app-header>
         <!-- end:: header  -->
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, quam, ratione officiis tempore placeat dolore necessitatibus aliquid error quaerat delectus quis, repellendus harum magnam natus? Accusamus veniam magni ad necessitatibus?</p>
-   
-
-        <button type="button" mat-button (click)="drawer.toggle()">
-            Toggle sidenav
-        </button>
-
     
     </div>
   

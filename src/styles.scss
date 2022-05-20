@@ -37,3 +37,12 @@ $window-task-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Background Utilties 
+.bg-dark {
+  background-color:#191a1d !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}

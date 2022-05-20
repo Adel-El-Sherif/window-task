@@ -1,7 +1,10 @@
 .example-container {
     // Structure Block 
     height: 100vh;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #010001;
+
+    // Typography Block 
+    color: #fff;
 }
   
 .example-sidenav-content {
@@ -12,6 +15,8 @@
 .example-sidenav {
     // Structure Block 
     padding: 20px;
+    border-right: 1px solid #27282b;
+
 }
   
 
@@ -27,17 +32,21 @@
         .mat-drawer-side {
 
             // Positioning Block 
-            left: 73px;
+            // left: 73px;
+
 
             // Modifire Block
             visibility: visible !important;
+            transform: translate3d(calc(-100% + 73px), 0, 0);
 
             // Structure Block 
             display: block !important;
+            min-width: 250px;
 
             &.mat-drawer-opened {
                 // Positioning Block 
                 left: 0;
+
             }
             
         }

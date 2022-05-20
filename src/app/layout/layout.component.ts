@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
 
   // booleans 
-  showFiller = true;
-
+  draweState: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openedChange(e: any) {
+    this.draweState = e
   }
 
 }
