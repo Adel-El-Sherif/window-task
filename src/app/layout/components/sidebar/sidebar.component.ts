@@ -35,7 +35,32 @@ export class SidebarComponent implements OnInit {
       icon: 'assets/media/icons/arrow-right.svg',
       title: 'TV Shows'
     }
+  ];
+
+  nav2: any[] = [
+    {
+      icon: 'fas fa-atom',
+      title: 'Trending'
+    },
+    {
+      icon: 'fas fa-sync',
+      title: 'History'
+    },
+    {
+      icon: 'fas fa-bell',
+      title: 'Notification'
+    },
+    {
+      icon: 'fas fa-heart',
+      title: 'Subscriptions'
+    },
+    {
+      icon: 'fas fa-video',
+      title: 'Your Videos'
+    },
   ]
+
+  
   
   constructor() { }
 

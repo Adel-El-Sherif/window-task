@@ -9,10 +9,48 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+/* For use in src/lib/core/theming/_palette.scss */
+$md-mcgpalette0: (
+    50 : #fde3e0,
+    100 : #fabab3,
+    200 : #f78c80,
+    300 : #f35e4d,
+    400 : #f13c26,
+    500 : #ee1900,
+    600 : #ec1600,
+    700 : #e91200,
+    800 : #e70e00,
+    900 : #e20800,
+    A100 : #ffffff,
+    A200 : #ffd7d6,
+    A400 : #ffa4a3,
+    A700 : #ff8b8a,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$window-task-primary: mat.define-palette(mat.$indigo-palette);
+$window-task-primary: mat.define-palette($md-mcgpalette0);
 $window-task-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -34,6 +72,10 @@ $window-task-theme: mat.define-light-theme((
 @include mat.all-component-themes($window-task-theme);
 
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-color: #ee1900
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,14 +1,85 @@
+.current-page {
+
+    // Structure Block 
+    padding: .2rem 1.7rem;
+
+
+
+    .icon {
+        // Structure Block 
+        width: 30px;
+        height: 30px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .txt {
+        // Typography Block 
+        color: var(--primary-color);
+    }
+}
+
+
 .nav-1 {
 
 
     &__item {
         // Structure Block 
         padding: .2rem 2rem;
+        &:hover {
+            // Structure Block 
+            background: #222326;
+        }
     }
 }
+
+.nav-2  {
+
+    &__item {
+
+        // Structure Block 
+        padding: .2rem 1.7rem;
+
+
+        &:hover {
+            // Structure Block 
+            background: #222326;
+        }
+
+        &:hover {
+            .nav-icon {
+                // Typography Block 
+                color: #fff;
+            }
+        }
+    }
+
+    .nav-icon {
+        
+        // Structure Block 
+        width: 30px;
+        height: 30px;
+        background: #3b3e43;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
 
 
 .short-nav {
     // Structure Block 
     padding: calc(73px / 4);
+}
+
+hr {
+    // Structure Block 
+    background-color: #3b3d42; 
 }

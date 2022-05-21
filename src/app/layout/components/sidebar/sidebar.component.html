@@ -3,18 +3,53 @@
     <ng-container *ngIf="draweState">
 
         
-        <nav class="nav-1 pt-5">
-            <ul class="list-unstyled">
-                <li *ngFor="let item of nav1">
-                    <a  mat-button class="nav-1__item d-flex align-items-center" routerLink="">
-                        <span class="nav-icon me-4">
-                            <img width="17" [src]="item.icon" alt="Arrow">
-                        </span>
-                        <small class="nav-txt text-white">{{item.title}}</small>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <div class="animate__animated animate__fadeIn">
+
+
+            <div class="current-page d-flex align-items-center pt-4">
+                <div class="me-4 icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <span class="txt fw-bold">Home</span>
+            </div>
+
+            <div class="px-4"><hr></div>
+
+
+            <!-- begin:: nav 1  -->
+            <nav class="nav-1">
+                <ul class="list-unstyled">
+                    <li *ngFor="let item of nav1">
+                        <a  mat-button class="nav-1__item d-flex align-items-center" routerLink="">
+                            <span class="nav-icon me-4">
+                                <img width="17" [src]="item.icon" alt="Arrow">
+                            </span>
+                            <small class="nav-txt text-white">{{item.title}}</small>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- end:: nav 1  -->
+
+
+            <div class="px-4"><hr></div>
+
+            <!-- begin:: nav 1  -->
+            <nav class="nav-2">
+                <ul class="list-unstyled">
+                    <li class="mb-1" *ngFor="let item of nav2">
+                        <a  mat-button class="nav-2__item d-flex align-items-center" routerLink="">
+                            <span class="nav-icon me-3">
+                                <i [class]="'fas text-white' +item.icon"></i>
+                            </span>
+                            <small class="nav-txt text-white">{{item.title}}</small>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- end:: nav 1  -->
+       </div>
+
 
 
     </ng-container>
@@ -24,7 +59,7 @@
         <nav [hidden]="openedStart" class="short-nav">
             <ul class="list-unstyled text-end animate__animated animate__fadeIn">
                 <li class="mb-3">
-                    <a routerLink="" mat-mini-fab color="warn">
+                    <a routerLink="" mat-mini-fab color="primary">
                         <i class="fas fa-home"></i>
                     </a>
                 </li>

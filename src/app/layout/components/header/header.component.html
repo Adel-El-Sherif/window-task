@@ -2,8 +2,13 @@
     <div class="container">
     
     
-      <button (click)="toggleDrawer.emit()" type="button" mat-button>
-        Toggle sidenav
+      <button class="menu-btn p-0 btn" (click)="toggleDrawer.emit()" type="button"
+        [ngClass]="{
+          'right-arrow': !draweState,
+          'left-arrow': draweState
+        }"
+      >
+        <span class="menu-toggle"></span>
       </button> 
     
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
