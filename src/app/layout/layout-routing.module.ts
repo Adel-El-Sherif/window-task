@@ -5,8 +5,22 @@ import { LayoutComponent } from './layout.component';
 const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent
-  }
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'home',
+        loadChildren: () =>
+        import(
+          '../modules/home/home.module'
+        ).then((m) => m.HomeModule),
+      },
+      {
+        path: '',
+        redirectTo: 'home'
+      }
+    ]
+  },
+  
 ];
 
 @NgModule({

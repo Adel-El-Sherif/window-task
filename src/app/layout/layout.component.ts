@@ -9,13 +9,22 @@ export class LayoutComponent implements OnInit {
 
   // booleans 
   draweState: boolean = false;
+  isOpening: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  openedChange(e: any) {
-    this.draweState = e
+  openedChange(e: any): any {
+    this.draweState = e    
+  }
+
+  openedStart(): any {
+    this.isOpening = true;
+  }
+
+  closedStart(): any {
+    this.isOpening = false;
   }
 
 }

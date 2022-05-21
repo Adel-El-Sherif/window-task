@@ -14,7 +14,7 @@
   
 .example-sidenav {
     // Structure Block 
-    padding: 20px;
+    // padding: 20px;
     border-right: 1px solid #27282b;
 
 }
@@ -51,4 +51,9 @@
             
         }
     }
+}
+
+iframe {
+    height: 100vh;
+    overflow: hidden;
 }

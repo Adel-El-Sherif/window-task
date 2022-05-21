@@ -1,0 +1,80 @@
+<div class="carousel-wrapper position-relative h-100">
+  <swiper
+    #swiper
+    style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
+    [spaceBetween]="10"
+    [navigation]="true"
+    [thumbs]="{ swiper: thumbsSwiper }"
+    class="mySwiper2"
+    [config]="swiperConfig"
+>
+    <ng-template swiperSlide>
+      <img class="img-fluid" src="assets/media/home/hero-section/img1.jpg" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+    </ng-template>
+
+   
+
+</swiper>
+  <div class="swiper__controls d-flex justify-content-between">
+    <button (click)="swipeNext()" class="carousel-previous">
+      xo
+    </button>
+    <button (click)="swipePrev()"  class="carousel-next">
+      xo
+    </button>
+  </div>
+
+  <swiper
+    (swiper)="thumbsSwiper = $event"
+    [spaceBetween]="10"
+    [slidesPerView]="4"
+    [freeMode]="true"
+    direction="vertical"
+    [watchSlidesProgress]="true"
+    class="mySwiper"
+  >
+    <ng-template swiperSlide>
+        <img class="img-fluid" src="assets/media/home/hero-section/img1.jpg" />
+    </ng-template>
+    <ng-template swiperSlide>
+        <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+  </ng-template>
+  <ng-template swiperSlide>
+    <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+</ng-template>
+<ng-template swiperSlide>
+  <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+</ng-template>
+<ng-template swiperSlide>
+  <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+</ng-template>
+<ng-template swiperSlide>
+  <img class="img-fluid" src="assets/media/home/hero-section/img2.jpg" />
+</ng-template>
+  </swiper>
+</div>

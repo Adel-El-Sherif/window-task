@@ -38,6 +38,11 @@ $window-task-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@import "~swiper/css";
+@import "~swiper/css/free-mode";
+@import "~swiper/css/navigation";
+@import "~swiper/css/thumbs";
+
 // Background Utilties 
 .bg-dark {
   background-color:#191a1d !important;
@@ -45,4 +50,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .cursor-pointer {
   cursor: pointer !important;
+}
+
+// Buttons Utilties
+.mat-mini-fab {
+  &.mat-base {
+    background-color: transparent;
+    color: #fff;
+  }
 }

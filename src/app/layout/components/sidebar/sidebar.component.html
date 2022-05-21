@@ -1,12 +1,59 @@
 <aside class="text-white">
 
     <ng-container *ngIf="draweState">
-        1 fsdf fsdfsd
+
+        
+        <nav class="nav-1 pt-5">
+            <ul class="list-unstyled">
+                <li *ngFor="let item of nav1">
+                    <a  mat-button class="nav-1__item d-flex align-items-center" routerLink="">
+                        <span class="nav-icon me-4">
+                            <img width="17" [src]="item.icon" alt="Arrow">
+                        </span>
+                        <small class="nav-txt text-white">{{item.title}}</small>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
     </ng-container>
     
 
     <ng-container *ngIf="!draweState">
-        2 dsfsd  sdfs
+        <nav [hidden]="openedStart" class="short-nav">
+            <ul class="list-unstyled text-end animate__animated animate__fadeIn">
+                <li class="mb-3">
+                    <a routerLink="" mat-mini-fab color="warn">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+
+                <li class="mb-3">
+                    <a routerLink="" mat-mini-fab color="base">
+                        <i class="fas fa-bell"></i>
+                    </a>
+                </li>
+
+                <li class="mb-3">
+                    <a routerLink="" mat-mini-fab color="base">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </li>
+
+                <li class="mb-3">
+                    <a routerLink="" mat-mini-fab color="base">
+                        <i class="fas fa-video"></i>
+                    </a>
+                </li>
+
+                <li class="mb-3">
+                    <a routerLink="" mat-mini-fab color="base">
+                        <i class="fas fa-music"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </ng-container>
 
 
