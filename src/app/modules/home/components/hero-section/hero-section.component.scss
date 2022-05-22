@@ -16,7 +16,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            right: 250px;
+            right: 315px;
 
             // Structure Block 
             align-items: center;
@@ -25,6 +25,33 @@
 
             // Modifire Block 
             z-index: 9;
+
+            .btn {
+                // Structure Block 
+                background-color: rgb(5, 5, 5, .6);
+                width: 35px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(255, 255, 255, .5);
+
+                // Typography Block 
+                font-size: .7rem;
+
+                // Modifire Block 
+                transition: all .3s ease-in-out;
+
+                &:hover {
+
+                    // Structure Block 
+                    background-color: rgb(5, 5, 5);
+
+                    // Modifire Block 
+                    transition: all .3s ease-in-out;
+
+                }
+            }
         }
 
         .swiper {
@@ -74,16 +101,20 @@
         .mySwiper {
             // height: 20%;
             box-sizing: border-box;
-            padding: 10px 0;
+            padding: 2rem;
             position: absolute;
             top: 0;
             right: 0;
-            width: 210px;
+            width: 300px;
+            background-color: rgba(0, 0, 0, .4);
+            border-left: 1px solid rgba(255, 255, 255, .4);
         }
         
         .mySwiper .swiper-slide {
-            height: 200px;
-            opacity: 0.4;
+            // height: 200px;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
         }
         
         .mySwiper .swiper-slide-thumb-active {

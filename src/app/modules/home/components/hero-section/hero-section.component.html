@@ -38,21 +38,17 @@
 
 </swiper>
   <div class="swiper__controls d-flex justify-content-between">
-    <button (click)="swipeNext()" class="carousel-previous">
-      xo
+    <button (click)="swipeNext()" class="carousel-previous btn text-white shadow-none my-1 rounded">
+      <i class="fas fa-arrow-up"></i>
     </button>
-    <button (click)="swipePrev()"  class="carousel-next">
-      xo
+    <button (click)="swipePrev()"  class="carousel-next btn text-white shadow-none my-1 rounded">
+      <i class="fas fa-arrow-down"></i>
     </button>
   </div>
 
   <swiper
     (swiper)="thumbsSwiper = $event"
-    [spaceBetween]="10"
-    [slidesPerView]="4"
-    [freeMode]="true"
-    direction="vertical"
-    [watchSlidesProgress]="true"
+    [config]="thumbsSwiperConfig"
     class="mySwiper"
   >
     <ng-template swiperSlide>

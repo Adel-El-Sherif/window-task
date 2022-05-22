@@ -22,6 +22,14 @@ export class HeroSectionComponent implements OnInit {
     navigation: { nextEl: '.carousel-next', prevEl: '.carousel-previous' },
   };
 
+  thumbsSwiperConfig: SwiperOptions = {
+    direction:"vertical",
+    spaceBetween: 32,
+    slidesPerView: 3.1,
+    freeMode: true,
+    watchSlidesProgress: true
+  };
+  
   constructor() { }
 
   ngOnInit(): void {

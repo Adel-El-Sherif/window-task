@@ -6,7 +6,9 @@
     // Typography Block 
     color: #fff;
 }
-  
+
+
+
 .example-sidenav-content {
     // Structure Block 
     height: auto;
@@ -22,6 +24,23 @@
 
 :host {
     ::ng-deep {
+
+        .mat-drawer-inner-container {
+            /* width */
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: #555659;
+            }
+        }
 
 
         .mat-drawer-content {
