@@ -96,6 +96,36 @@
         .mySwiper2 {
             height: 100%;
             width: 100%;
+
+            .swiper-slide {
+                // Positioning Block 
+                position: relative;
+                &::after {
+
+                    // Structure Block 
+                    content: "";
+                    background-color: rgba(0, 0, 0, .4);
+
+                    // Positioning Block 
+                    position: absolute;
+                    inset: 0;
+
+
+                }
+
+                .slide__content {
+                    // Positioning Block 
+                    position: absolute;
+                    inset: 0;
+
+                    // Structure Block 
+                    display: flex;
+                    align-items: center;
+
+                    // Modifire Block 
+                    z-index: 2;
+                }
+            }
         }
         
         .mySwiper {
