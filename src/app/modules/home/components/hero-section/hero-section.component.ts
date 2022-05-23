@@ -34,10 +34,6 @@ export class HeroSectionComponent implements OnInit {
     watchSlidesProgress: true
   };
 
-  // booleans 
-  animate: boolean = true;
-
-
   slides: any[] = [
     {
       imgPath: 'assets/media/home/hero-section/img3.jpg',
@@ -72,7 +68,6 @@ export class HeroSectionComponent implements OnInit {
   }
 
   onSwiper(swiper: any) {
-    console.log(swiper);
   }
 
   swipePrev() {
@@ -83,12 +78,6 @@ export class HeroSectionComponent implements OnInit {
   }
 
   onSlideChange(): void {
-    console.log('s');
-    
-    this.animate = false;
-    setTimeout(() => {
-      this.animate = true;
-    },);
   }
 
 }

@@ -25,9 +25,7 @@
 
         <div class="slide__content text-start">
           <div class="container">
-            <div class="slide__stats mb-2 d-flex animate__animated animate__delay-1s"
-              [ngClass]="{'animate__fadeInDown': animate}"
-            >
+            <div class="slide__stats mb-2 d-flex animate__animated">
   
               <div class="slide__stats__item me-4 slide__stats__item--reactions">
                 <small class="slide__stats__item__icon slide__stats__item__icon--heart">
@@ -61,10 +59,10 @@
   
             </div>
   
-            <div class="slide__content__title mb-5 animate__animated" [ngClass]="{'animate__fadeInDown': animate}">
+            <div class="slide__content__title mb-5 animate__animated">
               <h2 class="h1 lh-normal">{{ item.title }}</h2>
             </div>
-            <div class="slide__actions animate__animated" [ngClass]="{'animate__fadeInUp': animate}">
+            <div class="slide__actions animate__animated">
               <button class="px-4 d-inline-flex align-items-center me-3" mat-raised-button color="primary">
                 <i class="fas fa-play-circle me-2"></i>
                 <small>WATCH NOW</small>

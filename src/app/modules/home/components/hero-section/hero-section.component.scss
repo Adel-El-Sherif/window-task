@@ -132,13 +132,24 @@
                         }
                       
                     }
+
+                    .slide__stats {
+                        // Modifire Block 
+                        animation-delay: .5s;
+                    }
                 }
 
                 &-active {
 
                     .slide__content {
-                        // Typography Block 
-                        // font-size:3.84rem;
+                        .slide__stats,
+                        .slide__actions,
+                        &__title {
+                            // Modifire Block 
+                            -webkit-animation-name: fadeInDown;
+                            animation-name: fadeInDown;
+                        }
+                      
                     }
                    
                 }
