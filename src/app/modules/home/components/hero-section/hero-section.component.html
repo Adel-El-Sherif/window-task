@@ -1,54 +1,84 @@
 <div class="carousel-wrapper position-relative h-100">
   <swiper
     #swiper
-    style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
     [spaceBetween]="10"
     [navigation]="true"
     [thumbs]="{ swiper: thumbsSwiper }"
     class="mySwiper2"
     [config]="swiperConfig"
->
-    <ng-template swiperSlide>
-      <img class="img-fluid" src="assets/media/home/hero-section/img3.jpg" />
-      <div class="slide__content text-start">
-        <div class="container">
-          <div class="slide__stats">
-            ....
-          </div>
-          <div class="slide__content__title">
-            <h2 class="h1">Army of the <br> Dead</h2>
-          </div>
-          <div class="slide__actions">
-            <button class="px-4 me-3" mat-raised-button color="primary">
-              <i class="fas fa-play-circle me-2"></i>
-              <small>WATCH NOW</small>
-            </button>
-            <button class="px-4" mat-raised-button color="accent">
-              <i class="fas fa-eye me-2"></i>
-              <small>PREVIEW</small>
-            </button>
+    (swiper)="onSwiper($event)"
+    (slideChange)="onSlideChange()"
+    >
+    <!-- (beforeTransitionStart)="animate = false" -->
+
+    <ng-container *ngFor="let item of slides">
+     
+      <ng-template swiperSlide>
+
+        <img *ngIf="item.imgPath" class="img-fluid" [src]="item.imgPath" />
+
+        <video *ngIf="item.videoPath" autoplay loop muted>
+          <source [src]="item.videoPath" type="video/mp4" />
+          <!-- <source [src]="item.videoPath" type="video/ogg" /> -->
+          Your browser does not support the video element.
+        </video>
+
+        <div class="slide__content text-start">
+          <div class="container">
+            <div class="slide__stats mb-2 d-flex animate__animated animate__delay-1s"
+              [ngClass]="{'animate__fadeInDown': animate}"
+            >
+  
+              <div class="slide__stats__item me-4 slide__stats__item--reactions">
+                <small class="slide__stats__item__icon slide__stats__item__icon--heart">
+                  <i class="fas fa-heart"></i>
+                </small>
+                <small class="slide__stats__item__icon slide__stats__item__icon--sync">
+                  <i class="fas fa-sync"></i>
+                </small>
+                <small class="slide__stats__item__icon slide__stats__item__icon--smile">
+                  <i class="fas fa-smile"></i>
+                </small>
+                <small class="slide__stats__item__icon slide__stats__item__icon--down me-2">
+                  <i class="fas fa-thumbs-down"></i>
+                </small>
+                <small class="txt">8 Reactions</small>
+              </div>
+             
+              <div class="slide__stats__item me-4">
+                <small class="slide__stats__item__icon me-2">
+                  <i class="fas fa-comment"></i>
+                </small>
+                <small class="txt">0 Comments</small>
+              </div>
+  
+              <div class="slide__stats__item me-4">
+                <small class="slide__stats__item__icon me-2">
+                  <i class="fas fa-eye"></i>
+                </small>
+                <small class="txt">1.3k Views</small>
+              </div>
+  
+            </div>
+  
+            <div class="slide__content__title mb-5 animate__animated" [ngClass]="{'animate__fadeInDown': animate}">
+              <h2 class="h1 lh-normal">{{ item.title }}</h2>
+            </div>
+            <div class="slide__actions animate__animated" [ngClass]="{'animate__fadeInUp': animate}">
+              <button class="px-4 d-inline-flex align-items-center me-3" mat-raised-button color="primary">
+                <i class="fas fa-play-circle me-2"></i>
+                <small>WATCH NOW</small>
+              </button>
+              <button class="px-4 d-inline-flex align-items-center" mat-raised-button color="accent">
+                <i class="fas fa-eye me-2"></i>
+                <small>PREVIEW</small>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </ng-template>
-
-    <ng-template swiperSlide>
-      <img class="img-fluid" src="assets/media/home/hero-section/img4.jpg" />
-    </ng-template>
-
-    <ng-template swiperSlide>
-      <img class="img-fluid" src="assets/media/home/hero-section/img5.jpg" />
-    </ng-template>
-
-    <ng-template swiperSlide>
-      <img class="img-fluid" src="assets/media/home/hero-section/img3.jpg" />
-    </ng-template>
-
-    <ng-template swiperSlide>
-      <img class="img-fluid" src="assets/media/home/hero-section/img4.jpg" />
-    </ng-template>
-
-   
+      </ng-template>
+    </ng-container>
+    
 
 </swiper>
   <div class="swiper__controls d-flex justify-content-between">
@@ -64,26 +94,50 @@
     (swiper)="thumbsSwiper = $event"
     [config]="thumbsSwiperConfig"
     class="mySwiper"
+    (slideChange)="onSlideChange()"
   >
+  <ng-container *ngFor="let item of slides">
+      <ng-template swiperSlide>
+        <img class="img-fluid" [src]="item.thumbPath" />
+        <div class="slide-data">
 
-  <ng-template swiperSlide>
-    <img class="img-fluid" src="assets/media/home/hero-section/img3.jpg" />
-  </ng-template>
+          <circle-progress
+            class="me-2"	
+            [percent]="77"
+            [maxPercent]="100"
+            [responsive]="true"
+            [showTitle]="true"
+            [space]="-10"
+            [showUnits]="true"
+            [titleFontSize]="'65'"
+            [unitsFontSize]="'45'"
+            [backgroundColor]="'rgba(0, 0, 0, 0.4)'"
+            [subtitleColor]="'#fff'"
+            [titleColor]="'#fff'"
+            [unitsColor]="'#fff'"
+            [showBackground]="true"
+            [outerStrokeWidth]="10"
+            [outerStrokeColor]="'#63a269'"
+            [innerStrokeColor]="'#3b3e43'"
+            [innerStrokeWidth]="10"
+            [animationDuration]="1000"
+            [showBackground]="true"
+            [showInnerStroke]="true"
+            [showSubtitle]="false"
+            [clockwise]="true"
+            [startFromZero]="false"
+            [lazy]="true"
+            [showInnerStroke]="true"
+          ></circle-progress>
 
-  <ng-template swiperSlide>
-    <img class="img-fluid" src="assets/media/home/hero-section/img4.jpg" />
-  </ng-template>
-
-  <ng-template swiperSlide>
-    <img class="img-fluid" src="assets/media/home/hero-section/img5.jpg" />
-  </ng-template>
-
-  <ng-template swiperSlide>
-    <img class="img-fluid" src="assets/media/home/hero-section/img3.jpg" />
-  </ng-template>
-
-  <ng-template swiperSlide>
-    <img class="img-fluid" src="assets/media/home/hero-section/img4.jpg" />
-  </ng-template>
+          <span class="tag d-inline-flex align-items-center"> 
+            <small class="icon me-2">
+              <i class="fas fa-chart-line"></i>
+            </small>
+            <small>0</small>
+          </span>
+        </div>
+      </ng-template>
+  </ng-container>
   </swiper>
 </div>

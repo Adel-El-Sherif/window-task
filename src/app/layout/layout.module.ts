@@ -18,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule,
     MatSidenavModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+  
   ]
 })
 export class LayoutModule { }

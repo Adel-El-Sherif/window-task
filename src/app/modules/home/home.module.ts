@@ -6,7 +6,8 @@ import { HomeComponent } from './home.component';
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { SwiperModule } from 'swiper/angular';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+// Import ng-circle-progress
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     SwiperModule,
     SharedModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    // Specify ng-circle-progress as an import
+    NgCircleProgressModule.forRoot()
   ]
 })
 export class HomeModule { }

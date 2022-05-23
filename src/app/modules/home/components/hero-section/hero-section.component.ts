@@ -3,10 +3,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
-import SwiperCore, { FreeMode, Navigation, Thumbs, SwiperOptions } from "swiper";
+import SwiperCore, { FreeMode, Navigation, Thumbs, SwiperOptions, Autoplay } from "swiper";
 
 // install Swiper modules
-SwiperCore.use([FreeMode, Navigation, Thumbs]);
+SwiperCore.use([FreeMode, Navigation, Thumbs, Autoplay]);
 
 @Component({
   selector: 'hero-section',
@@ -16,23 +16,63 @@ SwiperCore.use([FreeMode, Navigation, Thumbs]);
 export class HeroSectionComponent implements OnInit {
 
   @ViewChild(SwiperComponent) swiper!: SwiperComponent;
+  
 
   thumbsSwiper: any;
   swiperConfig: SwiperOptions = {
     navigation: { nextEl: '.carousel-next', prevEl: '.carousel-previous' },
+    autoplay: {
+      delay: 4000,
+    },
   };
 
   thumbsSwiperConfig: SwiperOptions = {
     direction:"vertical",
     spaceBetween: 32,
-    slidesPerView: 3.1,
+    slidesPerView: 4.1,
     freeMode: true,
     watchSlidesProgress: true
   };
+
+  // booleans 
+  animate: boolean = true;
+
+
+  slides: any[] = [
+    {
+      imgPath: 'assets/media/home/hero-section/img3.jpg',
+      thumbPath: 'assets/media/home/hero-section/img3.jpg',
+      title: 'Army of the Dead'
+    },
+    {
+      videoPath: 'assets/media/videos/pexels-pat-whelen-5658049.mp4',
+      thumbPath: 'assets/media/home/hero-section/img6.png',
+      title: 'Ghost Whisperer'
+    },
+    {
+      imgPath: 'assets/media/home/hero-section/img5.jpg',
+      thumbPath: 'assets/media/home/hero-section/img5.jpg',
+      title: 'Army of the Dead'
+    },
+    {
+      videoPath: 'assets/media/videos/pexels-pat-whelen-5658049.mp4',
+      thumbPath: 'assets/media/home/hero-section/img6.png',
+      title: 'Ghost Whisperer'
+    },
+    {
+      imgPath: 'assets/media/home/hero-section/img4.jpg',
+      thumbPath: 'assets/media/home/hero-section/img4.jpg',
+      title: 'Army of the Dead'
+    },
+  ]
   
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSwiper(swiper: any) {
+    console.log(swiper);
   }
 
   swipePrev() {
@@ -40,6 +80,15 @@ export class HeroSectionComponent implements OnInit {
   }
   swipeNext() {
     this.swiper.swiperRef.slideNext();
+  }
+
+  onSlideChange(): void {
+    console.log('s');
+    
+    this.animate = false;
+    setTimeout(() => {
+      this.animate = true;
+    },);
   }
 
 }

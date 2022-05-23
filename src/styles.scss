@@ -108,7 +108,9 @@ $window-task-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --primary-color: #ee1900
+  --primary-color: #ee1900;
+  --secondary: #3e4048;
+ 
 }
 
 html, body { height: 100%; }
@@ -138,7 +140,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .lh-normal {
-  line-height: normal;
+  line-height: normal !important;
 }
 
 .w-35px {

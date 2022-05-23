@@ -128,9 +128,22 @@
             right: 0;
         }
 
+        &-title {
+            // Modifire Block 
+            transition: all .3s ease-in-out;
+        }
+
         &__count {
             // Typography Block 
             font-size: .5rem;
+
+            // Positioning Block 
+            position: relative;
+            top: 0;
+
+            // Modifire Block 
+            transition: all .3s ease-in-out;
+
         }
 
         
@@ -139,6 +152,7 @@
             font-size: .5rem;
         }
 
+        &:hover,
         &.active {
 
             .nav-link__arrow,
@@ -152,10 +166,32 @@
                 // Structure Block 
                 background-color: var(--primary-color);
             }
+
+           
          
         }
 
         &:hover {
+
+
+            .nav-link__count {
+                
+                // Positioning Block 
+                position: relative;
+                top: 1px;
+
+                // Modifire Block 
+                transition: all .3s ease-in-out;
+            }
+
+            .nav-link-title {
+                // Typography Block 
+                font-size: .8.4rem;
+
+                // Modifire Block 
+                transition: all .3s ease-in-out;
+            }
+
             .auk-dropdown-menu {
 
                 // Modifire Block 
@@ -208,6 +244,9 @@
 
                 // Modifire Block 
                 transition: all .3s ease-in-out;
+
+                // Typography Block 
+                color: #a5a4a5;
 
                 &:hover {
 

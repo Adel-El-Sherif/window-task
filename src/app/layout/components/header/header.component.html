@@ -19,8 +19,8 @@
         <ul class="navbar-nav mx-auto">
 
           <ng-container *ngFor="let item of menue; let index = index">
-            <li class="nav-item lh-normal mx-2">
-              <span [class.active]="index==0" class="nav-link pb-3" aria-current="page" href="#">
+            <li class="nav-item lh-normal mx-2 px-1">
+              <span [class.active]="index==0" class="nav-link pb-3 cursor-pointer" aria-current="page" href="#">
                 <span class="nav-link__count">
                   0{{index+1}}
                 </span>
@@ -37,8 +37,8 @@
                         <ng-container *ngFor="let subItem of item.subMenue">
                           <li>
                             <a  mat-button class="auk-dropdown-menu__item d-flex align-items-center justify-content-between px-4" routerLink="">
-                              <small class="nav-txt text-white me-3">{{subItem.title}}</small>
-                              <i class="fas fa-chevron-right text-white"></i>
+                              <small class="nav-txt me-3">{{subItem.title}}</small>
+                              <!-- <i class="fas fa-chevron-right text-white"></i> -->
                             </a>
                           </li>
                         </ng-container>
