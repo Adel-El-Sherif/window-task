@@ -20,11 +20,41 @@
 
             // Structure Block 
             align-items: center;
-            justify-content: center !important;
+            justify-content: center;
             flex-direction: column;
+            width: auto;
 
             // Modifire Block 
             z-index: 9;
+
+                // Large devices (desktops, less than 1200px)
+                @media (max-width: 1199.98px) { 
+
+                    // Positioning Block 
+                    top: auto;
+                    left: 0;
+                    right: 0;
+
+                    // Structure Block 
+                    flex-direction: row;
+                    justify-content: flex-start;
+
+
+                    &::after {
+                        position: relative;
+                        inset: 0;
+                        
+                        content: '';
+                        width: calc(100% - 100px);
+                        height: 2px;
+                        display: block;
+                        background-color: var(--primary-color);
+                        margin-left: auto;
+
+                    }
+                
+                }
+
 
             .btn {
                 // Structure Block 
@@ -41,6 +71,15 @@
 
                 // Modifire Block 
                 transition: all .3s ease-in-out;
+
+                i {
+
+                    // Large devices (desktops, less than 1200px)
+                    @media (max-width: 1199.98px) { 
+                        transform: rotate(260deg);
+                    }
+                }
+
 
                 &:hover {
 
@@ -122,10 +161,17 @@
                     align-items: center;
 
                     // Modifire Block 
-                    z-index: 2;
+                    z-index: 2;                   
 
 
                     &__title {
+
+                         // X-Large devices (large desktops, 1200px and up)
+                         @media (min-width: 1200px) { 
+                            // Structure Block 
+                            width: 77%;
+                        }
+
                         h2 {
                             // Typography Block 
                             font-size:3.84rem;
@@ -157,15 +203,45 @@
         }
         
         .mySwiper {
-            // height: 20%;
             box-sizing: border-box;
-            padding: 2rem;
             position: absolute;
             top: 0;
             right: 0;
             width: 20%;
             background-color: rgba(0, 0, 0, .4);
             border-left: 1px solid rgba(255, 255, 255, .4);
+
+                // X-Large devices (large desktops, 1200px and up)
+                @media (min-width: 1200px) { 
+
+                    // Structure Block 
+                    padding: 2rem;
+                }
+
+                // Large devices (desktops, less than 1200px)
+                @media (max-width: 1199.98px) { 
+                    // Structure Block 
+                    width: 100%;
+                    height: 131px;
+                    border-left: 0;
+                    padding-right: var(--bs-gutter-x,.75rem);
+                    padding-left: var(--bs-gutter-x,.75rem);
+                    background: none;
+
+
+                    // Positioning Block 
+                    top: auto;
+                    bottom: 50px;
+                    left: 0;
+                }
+
+
+                // X-Small devices (portrait phones, less than 576px)
+                @media (max-width: 575.98px) { 
+                    // Structure Block 
+                    height: 90px;
+                }
+
         }
         
         .mySwiper .swiper-slide {
@@ -329,3 +405,4 @@ video {
     min-width: 100%;
     min-height: 100%;
 }
+

@@ -1,6 +1,6 @@
 <mat-drawer-container class="example-container" autosize  >
     
-    <mat-drawer #drawer class="example-sidenav bg-dark" mode="side" (closedStart)="closedStart()" (openedStart)="openedStart()" (openedChange)="openedChange($event)">
+    <mat-drawer #drawer class="example-sidenav bg-dark" [mode]=" smallDevices ? 'over': 'side'" (closedStart)="closedStart()" (openedStart)="openedStart()" (openedChange)="openedChange($event)">
         <sidebar [draweState]="draweState" [openedStart]="isOpening"></sidebar>
     </mat-drawer>
   
@@ -8,9 +8,8 @@
 
 
         <!-- begin:: header  -->
-        <app-header [draweState]="draweState" (toggleDrawer)="drawer.toggle(); "></app-header>
+        <app-header [draweState]="draweState" (toggleDrawer)="drawer.toggle();"></app-header>
         <!-- end:: header  -->
-
 
         <!-- begin:: body  -->
         <router-outlet></router-outlet>

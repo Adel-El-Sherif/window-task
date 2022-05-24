@@ -4,6 +4,7 @@ import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
 import SwiperCore, { FreeMode, Navigation, Thumbs, SwiperOptions, Autoplay } from "swiper";
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 // install Swiper modules
 SwiperCore.use([FreeMode, Navigation, Thumbs, Autoplay]);
@@ -27,11 +28,21 @@ export class HeroSectionComponent implements OnInit {
   };
 
   thumbsSwiperConfig: SwiperOptions = {
-    direction:"vertical",
-    spaceBetween: 32,
-    slidesPerView: 4.1,
+    direction: "horizontal",
+    spaceBetween: 15,
+    slidesPerView: 2,
     freeMode: true,
-    watchSlidesProgress: true
+    watchSlidesProgress: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+      },
+      1200: {
+        direction: "vertical",
+        slidesPerView: 4.1,
+        spaceBetween: 32,
+      },
+    }
   };
 
   slides: any[] = [
@@ -61,8 +72,12 @@ export class HeroSectionComponent implements OnInit {
       title: 'Army of the Dead'
     },
   ]
+
+  // booleans 
+  smallDevices: boolean = false;
   
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

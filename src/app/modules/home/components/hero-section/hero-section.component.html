@@ -79,11 +79,11 @@
     
 
 </swiper>
-  <div class="swiper__controls d-flex justify-content-between">
-    <button (click)="swipeNext()" class="carousel-previous btn text-white shadow-none my-1 rounded">
+  <div class="swiper__controls d-flex container">
+    <button (click)="swipePrev()"  class="carousel-next btn text-white shadow-none my-1 rounded me-2 me-xl-0">
       <i class="fas fa-arrow-up"></i>
     </button>
-    <button (click)="swipePrev()"  class="carousel-next btn text-white shadow-none my-1 rounded">
+    <button (click)="swipeNext()" class="carousel-previous btn text-white shadow-none my-1 rounded">
       <i class="fas fa-arrow-down"></i>
     </button>
   </div>
@@ -91,7 +91,7 @@
   <swiper
     (swiper)="thumbsSwiper = $event"
     [config]="thumbsSwiperConfig"
-    class="mySwiper"
+    class="mySwiper container"
     (slideChange)="onSlideChange()"
   >
   <ng-container *ngFor="let item of slides">

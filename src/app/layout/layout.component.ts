@@ -1,3 +1,4 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,9 +11,13 @@ export class LayoutComponent implements OnInit {
   // booleans 
   draweState: boolean = false;
   isOpening: boolean = false;
-  constructor() { }
+  smallDevices: boolean = false;
+  constructor(
+    public _BreakpointObserver: BreakpointObserver
+  ) { }
 
   ngOnInit(): void {
+    this.smallDevices = this._BreakpointObserver.isMatched('(max-width: 767.98px)')
   }
 
   openedChange(e: any): any {

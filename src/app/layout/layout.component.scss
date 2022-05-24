@@ -42,37 +42,48 @@
             }
         }
 
-
-        .mat-drawer-content {
-            // Structure Block 
-            margin-left: 73px;
+        .mat-drawer {
+            display: block !important;
         }
 
+
+        .mat-drawer-content {
+      
+            // Medium devices (tablets, 768px and up)
+            @media (min-width: 768px) { 
+                // Structure Block 
+                margin-left: 73px;
+            }
+
+        }
+
+        .mat-drawer-over,
         .mat-drawer-side {
 
-            // Positioning Block 
-            // left: 73px;
+            // Medium devices (tablets, 768px and up)
+            @media (min-width: 768px) { 
+                    // Modifire Block
+                transform: translate3d(calc(-100% + 73px), 0, 0);
 
+
+                &.mat-drawer-opened {
+                    // Positioning Block 
+                    left: 0;
+
+                }
+            }
 
             // Modifire Block
             visibility: visible !important;
-            transform: translate3d(calc(-100% + 73px), 0, 0);
 
             // Structure Block 
             display: block !important;
             min-width: 250px;
 
-            &.mat-drawer-opened {
-                // Positioning Block 
-                left: 0;
 
-            }
+
+           
             
         }
     }
-}
-
-iframe {
-    height: 100vh;
-    overflow: hidden;
 }
