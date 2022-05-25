@@ -3,6 +3,13 @@
     display: block;
     height: calc(100vh - 65px);
 
+    // Medium devices (tablets, less than 992px)
+    @media (max-width: 991.98px) { 
+
+        // Structure Block 
+        height: calc(100vh - 59px);
+    }
+
     ::ng-deep {
         .swiper-slide img {
             display: block;
@@ -34,6 +41,7 @@
                     top: auto;
                     left: 0;
                     right: 0;
+                    bottom: 9px;
 
                     // Structure Block 
                     flex-direction: row;
@@ -175,6 +183,12 @@
                         h2 {
                             // Typography Block 
                             font-size:3.84rem;
+
+                            // Small devices (landscape phones, less than 768px)
+                            @media (max-width: 767.98px) { 
+                                // Typography Block 
+                                font-size: 2.2rem;
+                            }
                         }
                       
                     }
@@ -231,7 +245,7 @@
 
                     // Positioning Block 
                     top: auto;
-                    bottom: 50px;
+                    bottom: 62px;
                     left: 0;
                 }
 

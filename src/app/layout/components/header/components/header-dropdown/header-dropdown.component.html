@@ -1,0 +1,29 @@
+<span [class.active]="index==0" class="nav-link pb-1 pb-lg-3 cursor-pointer d-block" aria-current="page" href="#">
+    <span class="nav-link__count d-none d-lg-inline-block">
+      0{{index+1}}
+    </span>
+    <div class="d-flex align-items-center justify-content-between" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapseExample">
+      <div class="nav-link-title me-3">
+        {{data.title}}
+      </div> 
+      <i *ngIf="data.subMenue.length" class="fas fa-chevron-down nav-link__arrow"></i>
+    </div>
+
+    <!-- <ng-container *ngIf="item.subMenue"> -->
+        <div class="d-lg-block" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <div class="auk-dropdown-menu bg-dark rounded">
+                <ul class="list-unstyled pt-3 pt-lg-0">
+                    <ng-container *ngFor="let subItem of data.subMenue">
+                      <li>
+                        <a  mat-button class="auk-dropdown-menu__item d-flex align-items-center justify-content-between px-4" routerLink="">
+                          <small class="nav-txt me-3">{{subItem.title}}</small>
+                          <!-- <i class="fas fa-chevron-right text-white"></i> -->
+                        </a>
+                      </li>
+                    </ng-container>
+                </ul>
+            </div>
+        </div>
+    <!-- </ng-container> -->
+</span>

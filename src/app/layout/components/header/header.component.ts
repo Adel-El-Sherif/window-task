@@ -10,10 +10,6 @@ export class HeaderComponent implements OnInit {
   @Input() draweState: boolean = false;
   @Output() toggleDrawer: EventEmitter<boolean> = new EventEmitter(false);
 
-  nav1: any[] = [
-
-  ];
-
   menue: any[] = [
     { 
       title: 'Home',
@@ -109,6 +105,9 @@ export class HeaderComponent implements OnInit {
       ]
     }
   ]
+
+  // booleans 
+  public isCollapsed: boolean = true;
 
   constructor() { }
 
