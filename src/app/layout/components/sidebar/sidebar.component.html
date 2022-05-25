@@ -20,9 +20,10 @@
             <nav class="nav-1">
                 <ul class="list-unstyled">
                     <li *ngFor="let item of nav1">
-                        <a  mat-button class="nav-1__item d-flex align-items-center" routerLink="">
-                            <span class="nav-icon me-4">
-                                <img width="17" [src]="item.icon" alt="Arrow">
+                        <a  mat-button class="nav-1__item nav__item d-flex align-items-center" routerLink="">
+                            <span class="nav-icon nav-1-icon me-4">
+                                <!-- <img width="17" [src]="item.icon" alt="Arrow"> -->
+                                <i class="fas fa-arrow-right"></i>
                             </span>
                             <small class="nav-txt text-white">{{item.title}}</small>
                         </a>
@@ -38,7 +39,7 @@
             <nav class="nav-2">
                 <ul class="list-unstyled">
                     <li class="mb-1" *ngFor="let item of nav2">
-                        <a  mat-button class="nav-2__item d-flex align-items-center" routerLink="">
+                        <a  mat-button class="nav-2__item nav__item d-flex align-items-center" routerLink="">
                             <span class="nav-icon me-3">
                                 <i [class]="'fas text-white' +item.icon"></i>
                             </span>

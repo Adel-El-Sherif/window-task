@@ -8,13 +8,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderDropdownComponent } from './components/header/components/header-dropdown/header-dropdown.component';
+import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     HeaderComponent,
     SidebarComponent,
-    HeaderDropdownComponent
+    HeaderDropdownComponent,
+    BottomBarComponent
   ],
   imports: [
     CommonModule,

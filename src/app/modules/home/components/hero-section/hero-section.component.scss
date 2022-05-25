@@ -41,7 +41,7 @@
                     top: auto;
                     left: 0;
                     right: 0;
-                    bottom: 9px;
+                    bottom: calc(9px + 58px);
 
                     // Structure Block 
                     flex-direction: row;
@@ -245,7 +245,7 @@
 
                     // Positioning Block 
                     top: auto;
-                    bottom: 62px;
+                    bottom: calc(62px + 58px);
                     left: 0;
                 }
 
